@@ -117,6 +117,11 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
   /* Modal Content/Box */ }
+  .modal .gender-symbol {
+    filter: invert(1);
+    width: 12px;
+    margin-bottom: -2px;
+    padding: 0 4px; }
   .modal-content {
     text-align: center;
     background-color: #fefefe;
@@ -135,11 +140,13 @@ body {
     margin-top: 12px;
     max-width: -webkit-fill-available; }
   .modal-footer {
-    line-height: 40px;
+    line-height: 16px;
     background-color: #03b0c8;
     color: white;
     margin: 0 -20px -20px -20px;
     padding: 12px 0; }
+    .modal-footer > * {
+      margin: 18px 0; }
 
 /* The Close Button */
 .close {
@@ -195,4 +202,8 @@ body {
   .header-text h1 {
     font-size: 32px; }
   .main-content .footer.footer-upper {
-    display: block; } }
+    display: block; }
+  .modal-content {
+    width: 80%; }
+  .modal-img {
+    width: 133px; } }

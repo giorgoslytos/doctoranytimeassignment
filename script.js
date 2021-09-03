@@ -59,10 +59,12 @@ export const getPage = (id) =>
           )
         )
       );
+      window.history.pushState("nextPage", "page", `/?page=${id}`);
       return info;
     })
     .then(({ pages }) => {
       homePage.totalPages = pages;
+      homePage.page = +id;
       $(".pages").text(`${homePage.page} of ${homePage.totalPages}`);
       switch (homePage.page) {
         case 1:
@@ -88,6 +90,11 @@ const getCharacter = (id) =>
         $(".modal-species").text(species);
         $(".modal-status").attr("class", `modal-status ${status}`);
         $(".modal-gender span").text(gender);
+        if (gender === "Male") {
+          $(".modal-gender img").attr("src", "./images/mars-solid.svg");
+        } else {
+          $(".modal-gender img").attr("src", "./images/venus-solid.svg");
+        }
         $(".modal-location span").text(location.name);
         $(".modal-episode span").text(episode.length);
       })
@@ -103,5 +110,9 @@ const clearModal = () => {
   $(".modal-location span").text("");
   $(".modal-episode span").text("");
 };
+
+if (window.location.search) {
+  homePage.page = new URLSearchParams(window.location.search).get("page");
+}
 
 getPage(homePage.page);
