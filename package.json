@@ -1,0 +1,19 @@
+{
+  "name": "ricknmorty",
+  "description": "doctoranytime assignment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "George Lytos",
+  "license": "MIT",
+  "scripts": {
+    "start": "http-server",
+    "sass": "node-sass style.scss style.css -w"
+  },
+  "dependencies": {
+    "http-server": "^13.0.1",
+    "rickmortyapi": "^1.0.0"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
