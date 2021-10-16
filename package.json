@@ -7,13 +7,18 @@
   "license": "MIT",
   "scripts": {
     "start": "http-server",
-    "sass": "node-sass style.scss style.css -w"
+    "tsc": "tsc",
+    "sass": "node-sass ./src/sass -o ./dist/css",
+    "sass-watch": "node-sass ./src/sass -o ./dist/css -w",
+    "build": "npm run tsc && npm run sass"
   },
   "dependencies": {
     "http-server": "^13.0.1",
-    "rickmortyapi": "^1.0.0"
+    "rickmortyapi": "^1.0.0",
+    "typescript": "^4.4.4"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.7",
     "node-sass": "^6.0.1"
   }
 }
