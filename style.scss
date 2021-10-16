@@ -3,6 +3,24 @@ body {
   font-family: Roboto;
 }
 
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #03b0c8; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .header {
   position: relative;
   text-align: center;
@@ -47,6 +65,8 @@ body {
     flex-wrap: wrap;
     display: flex;
     place-content: center;
+
+
 
     .card {
       border-radius: 4px;
@@ -123,6 +143,9 @@ body {
   }
 }
 
+.modal-content {
+  text-align: -webkit-center;
+}
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -145,7 +168,6 @@ body {
 
   /* Modal Content/Box */
   &-content {
-    text-align: center;
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
@@ -195,7 +217,7 @@ body {
 
 .Alive {
   &::before {
-    content: "";
+    content: '';
     transform: translate(-8px, 0);
     display: inline-block;
     width: 10px;
@@ -208,7 +230,7 @@ body {
 }
 .Dead {
   &::before {
-    content: "";
+    content: '';
     transform: translate(-8px, 0);
     display: inline-block;
     width: 10px;
@@ -221,7 +243,7 @@ body {
 }
 .unknown {
   &::before {
-    content: "";
+    content: '';
     transform: translate(-8px, 0);
     display: inline-block;
     width: 10px;
