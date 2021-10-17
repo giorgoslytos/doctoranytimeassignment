@@ -100,7 +100,7 @@ if ($(".main-content")) {
           $content.empty();
           chars.forEach(({ id, name, image, status, species }) =>
             $content.append(
-              $(renderCard(name, image, status, species)).click(
+              $(renderCard(name, image, status, species)).on( 'click',
                 { id },
                 this.characterHandler.bind(this)
               )
